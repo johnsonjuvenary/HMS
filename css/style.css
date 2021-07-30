@@ -1,0 +1,292 @@
+/* @import url("../css/font/BeVietnam-Bold.ttf");
+@import url("../css/font/BeVietnam-BoldItalic.ttf");
+@import url("../css/font/BeVietnam-ExtraBoldItalic.ttf");
+@import url("../css/font/BeVietnam-Light.ttf");
+@import url("../css/font/BeVietnam-LightItalic.ttf");
+@import url("../css/font/BeVietnam-Medium.ttf");
+@import url("../css/font/BeVietnam-MediumItalic.ttf");
+@import url("../css/font/BeVietnam-Regular.ttf");
+@import url("../css/font/BeVietnam-RegularItalic.ttf");
+@import url("../css/font/BeVietnam-SemiBold.ttf");
+@import url("../css/font/BeVietnam-SemiBoldItalic.ttf");
+@import url("../css/font/BeVietnam-Thin.ttf");
+@import url("../css/font/BeVietnam-ThinItalic.ttf"); */
+
+:root {
+  --mainColor: #1e90ff;
+  --backgroundColor: #f0f0f0;
+  --headingColor: #fff;
+  --placeHolderSize: 14px;
+  --placeHolderColor: #b0c4de;
+  --hoverColor: #4682b4;
+  --borderColor: #e1e1e1;
+  --MainFont: "Be Vietnam", sans-serif;
+}
+
+* {
+  /* font-family: var(--MainFont); */
+  font-size: 15px;
+}
+
+/* loader */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid var(--mainColor);
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s;
+}
+
+@-webkit-keyframes animatebottom {
+  from {
+    bottom: -100px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes animatebottom {
+  from {
+    bottom: -100px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+#myDiv {
+  display: none;
+  text-align: center;
+}
+
+/* end of loader */
+
+/*Make the selected text White on a background Teal */
+::selection {
+  background-color: var(--mainColor);
+  color: var(--headingColor);
+}
+::-moz-selection {
+  background-color: var(--mainColor);
+  color: var(--headingColor);
+}
+/* end of Make the selected text White on a background Teal */
+
+/* navbar */
+.brand-name h3 {
+  text-transform: capitalize;
+}
+.navbar {
+  background: var(--mainColor);
+}
+.navbar .navbar-brand {
+  color: var(--headingColor);
+}
+
+.navbar .nav-link,
+.navbar .icons {
+  color: var(--headingColor);
+}
+.navbar .active {
+  background: var(--hoverColor);
+}
+.navbar .active:hover {
+  background: var(--hoverColor);
+}
+.navbar .nav-link:hover,
+.navbar .icons:hover {
+  background: var(--placeHolderColor);
+}
+
+@media screen and (max-width: 600px) {
+  .brand-name h3 {
+    font-size: 20px;
+  }
+}
+/* end of navbar */
+
+/* sidebar */
+
+.right-padding {
+  padding: 0;
+}
+.sidebar {
+  background: var(--backgroundColor);
+  position: fixed;
+  top: 5.5px;
+  left: 0;
+  bottom: 0;
+  margin: 56px auto auto;
+  width: 200px;
+  z-index: 2000;
+}
+.sidebar .nav-link {
+  color: var(--headingColor);
+  padding-left: 15px;
+}
+.sidebar .active {
+  background: var(--hoverColor);
+}
+.sidebar .active:hover {
+  background: var(--hoverColor);
+}
+.sidebar .nav-link:hover {
+  background: var(--placeHolderColor);
+}
+.sidebar .navbar-nav {
+  background: var(--mainColor);
+}
+/* end of sidebar */
+
+/* contents */
+.contents {
+  margin-left: 200px;
+}
+
+@media screen and (max-width: 767px) {
+  .contents {
+    margin-left: 0px;
+  }
+}
+/* end of contents */
+
+/* form */
+.form-icon {
+  padding: 8px;
+  background: var(--mainColor);
+  color: var(--headingColor);
+  min-width: 40px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.form-header {
+  margin: -30px -30px 20px;
+  padding: 30px 30px 10px;
+  text-align: center;
+  background: var(--mainColor);
+  color: var(--headingColor);
+}
+
+.form-header h2 {
+  font-size: 25px;
+  text-transform: uppercase;
+}
+.form-header h3 {
+  text-transform: capitalize;
+  font-size: 18px;
+}
+
+.form-control {
+  min-height: 41px;
+  border-color: var(--borderColor);
+}
+
+.form-control:focus {
+  border-color: var(--mainColor);
+}
+
+.form-control,
+.btn {
+  border-radius: 8px;
+}
+.main-form {
+  width: 390px;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.main-form form {
+  border-radius: 3px;
+  margin-bottom: 15px;
+  background: var(--backgroundColor);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: normal;
+  font-size: 15px;
+}
+.main-form a {
+  color: var(--mainColor);
+}
+
+.main-form a:hover {
+  text-decoration: underline;
+}
+
+.main-form select option:hover {
+  background: var(--mainColor);
+}
+
+::-webkit-input-placeholder {
+  color: var(--placeHolderColor);
+  font-size: var(--placeHolderSize);
+}
+:-ms-input-placeholder {
+  color: var(--placeHolderColor);
+  font-size: var(--placeHolderSize);
+}
+::placeholder {
+  color: var(--placeHolderColor);
+  font-size: var(--placeHolderSize);
+}
+/* end of forms */
+
+/* table  */
+#table th,
+#table td {
+  padding: 5px;
+}
+
+/* footer */
+.mastfoot {
+  color: rgba(255, 255, 255, 0.5);
+}
+/*end of footer */
